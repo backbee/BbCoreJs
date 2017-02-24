@@ -366,6 +366,29 @@
     "website_parameters": "Website parameters",
     "workflow_management": "Workflow management",
     "wrong_upload_file_types": "You can't upload files of this type",
-    "yes": "Yes"
+    "yes": "Yes",
 
+    "right_on_layouts": "Right on layouts",
+    "right_on_workflow": "Right on workflow",
+    "right_on_pages": "Right on pages",
+    "right_on_blocks": "Right on blocks",
+    "right_on_bundles": "Right on bundles",
+    "right_on_users": "Right on users",
+    "right_on_media": "Right on media",
+    "all_rights": "All rights",
+    "all_actions": "All actions",
+    "all_workflow": "All workflow",
+    "all_blocks": "All blocks",
+    "all_medias": "All medias",
+    "publish": "Publish",
+    "view": "View",
+    "commit": "Commit",
+    "none" : "No action allowed",
+    "manage_rights_on": "Manage rights on",
+    "right_clear_all": "Clear all",
+    "right_save_success": "Right has been updated.",
+    "no_workflow_has_been_added": "No workflow has been added.",
+
+    "create-new-group" : "Create a new group",
+    "description" : "Description"
 }

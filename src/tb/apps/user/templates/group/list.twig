@@ -14,6 +14,14 @@
         {% for group in groups %}
             {{ group.render() }}
         {% endfor %}
+
+        <li class="bb5-list-data-item bb5-list-group-item">
+            <div class="bb5-manage-group-create" dropzone="false">
+                <button type="button" class="button-create-group btn-default-grey">
+                    {{ 'create-new-group' | trans }}
+                </button>
+            </div>
+        </li>
     </ul>
 </div>
 

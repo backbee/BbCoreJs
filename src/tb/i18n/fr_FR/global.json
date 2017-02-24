@@ -273,7 +273,7 @@
     "restore": "Restaurer",
     "revision": "Révision",
     "rights_description": "Description des droits",
-    "rights_management": "Gestion des droits",
+    "rights_management": "Configurer les droits",
     "roles_management": "Gestion des rôles",
     "rollback_content_title": "Changement de version",
 
@@ -361,5 +361,28 @@
     "workflow_management": "Gestion du workflow",
     "wrong_upload_file_types": "Vous ne pouvez pas ajouter des fichiers de ce type",
 
-    "yes": "Oui"
+    "yes": "Oui",
+
+    "right_on_layouts" : "Droit sur les gabarits",
+    "right_on_workflow" : "Droit sur les workflows",
+    "right_on_pages" : "Droit sur les pages",
+    "right_on_blocks" : "Droit sur les blocs",
+    "right_on_bundles" : "Droit sur les modules",
+    "right_on_users" : "Droit des utilisateurs",
+    "right_on_media" : "Droit sur les médias",
+    "all_rights" : "Tout les droits",
+    "all_actions": "Tout",
+    "all_workflow" : "Tout les workflows",
+    "all_blocks" : "Tout les blocs",
+    "all_medias" : "Tout les médias",
+    "view" : "Voir",
+    "publish" : "Publier",
+    "none" : "Aucun droit",
+    "manage_rights_on" : "Gérer les droits sur",
+    "right_clear_all" : "Tout effacer",
+    "right_save_success" : "Les droits ont été mis à jour.",
+    "no_workflow_has_been_added": "Aucun workflow n'a été défini.",
+
+    "create-new-group" : "Créer un nouveau groupe",
+    "description" : "Description"
 }

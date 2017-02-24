@@ -57,6 +57,12 @@ define(['jquery', 'tb.component/treeview/NodeEditor', 'component!translator', "t
             context = context || this;
             this.treeEl.bind("tree." + eventName, jQuery.proxy(callback, context));
 
+            return this;
+        },
+        off: function (eventName) {
+            this.treeEl.unbind('tree.' + eventName);
+
+            return this;
         },
         /**
          * Generic proxy that allows us to invoke every methods on the tree widget

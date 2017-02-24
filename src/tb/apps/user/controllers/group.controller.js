@@ -35,7 +35,8 @@ define(
                     editService: ['user/views/group/form.view'],
                     duplicateService: ['user/views/group/duplicate.view'],
                     deleteService: ['user/views/group/delete.view'],
-                    showUsersService: ['user/repository/user.repository', 'user/views/user/view.list', 'text!user/templates/user/list.twig']
+                    showUsersService: ['user/repository/user.repository', 'user/views/user/view.list', 'text!user/templates/user/list.twig'],
+                    showRightsService: ['user/repository/right.repository', 'user/views/right/main.view', 'text!user/templates/right/main.twig']
                 }
             },
 
@@ -79,7 +80,7 @@ define(
                     },
                     function () {
                         popin.addGroups('');
-                        Core.exception.silent('GroupControllerEception', 500, 'Group REST paginate call fail');
+                        Core.exception.silent('GroupControllerException', 500, 'Group REST paginate call fail');
                     }
                 );
             },
@@ -91,7 +92,7 @@ define(
 
             initFormView: function (group, popin, View, action, error) {
                 var self = this,
-                    view = new View({group: group, error: error}),
+                    view = new View({group: group, error: error, popin: popin, action: action}),
                     group_id = group.id;
 
                 view.display().then(function (group) {
@@ -100,8 +101,10 @@ define(
                             Core.ApplicationManager.invokeService('user.user.index', popin);
                             self.indexService(require, popin);
                             Notify.success(trans('group_save_success'));
+                            popin.popinManager.destroy(view.popin);
                         },
                         function (error) {
+                            popin.popinManager.destroy(view.popin);
                             Notify.error(trans('group_save_fail'));
                             if (undefined !== group_id) {
                                 group.id = group_id;
@@ -147,28 +150,22 @@ define(
                 });
             },
 
-            showDescriptionService: function (main_popin, group_id) {
+            showRightsService: function (req, popin, group_id) {
+
+                var MainRightView = req('user/views/right/main.view'),
+                    tpl = req('text!user/templates/right/main.twig');
+
                 this.repository.find(group_id).then(
                     function (group) {
-                        var popin = main_popin.popinManager.createSubPopIn(
-                                main_popin.popin,
-                                {
-                                    id: 'new-user-subpopin',
-                                    width: 250,
-                                    top: 180,
-                                    close: function () {
-                                        main_popin.popinManager.destroy(popin);
-                                    }
-                                }
-                            );
 
-                        popin.setTitle(group.name);
-                        popin.setContent(group.description || trans('no_description_provided'));
+                        var mainView = new MainRightView({
+                            'template': renderer.render(tpl),
+                            'group': group,
+                            'popin': popin
+                        });
 
-                        popin.display();
-                    },
-                    function () {
-                        Notify.success(trans('group_request_fail'));
+                        mainView.setComponent("layout");
+
                     }
                 );
             },
