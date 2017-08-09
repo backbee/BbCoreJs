@@ -209,7 +209,7 @@ define(
                         cropNewH: cropHeightInput.val(),
                         selectedProportion: selectedProportion
                     }).done(function (response, headers) {
-                        var newMediaImageUid = headers.getHeader('BB-RESOURCE-UID');
+                        var newMediaImageUid = headers.getHeader('BB-RESOURCE-UID') || headers.getHeader('bb-resource-uid');
                         self.onDone({action: 'new', label: 'new_cropimage_created', newMediaImageUid: newMediaImageUid});
                         return response;
                     }).fail(function () {

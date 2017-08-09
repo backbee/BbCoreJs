@@ -264,9 +264,11 @@ define(
             },
 
             newPageRedirect: function (data, response) {
-                if (response.getHeader('Location')) {
-                    var request = new Request();
-                    request.setUrl(response.getHeader('Location'));
+                var location = response.getHeader('Location') || response.getHeader('location'),
+                    request = new Request();
+
+                if (location) {
+                    request.setUrl(location);
                     RequestHandler.send(request).then(
                         function (page) {
                             if (page.uri) {

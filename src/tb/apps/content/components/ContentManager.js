@@ -187,7 +187,8 @@ define(
                     dfd = jQuery.Deferred();
 
                 ContentRepository.save({'type': type, 'data': data}).done(function (data, response) {
-                    dfd.resolve(self.buildElement({'type': type, 'uid': response.getHeader('BB-RESOURCE-UID')}));
+                    var resourceUID = response.getHeader('BB-RESOURCE-UID') || response.getHeader('bb-resource-uid');
+                    dfd.resolve(self.buildElement({'type': type, 'uid': resourceUID}));
 
                     return data;
                 });

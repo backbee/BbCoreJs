@@ -233,7 +233,8 @@ define(
                                 btnLabel: Translator.translate('create'),
                                 btnCallback: function () {
                                     var callback = function (data, response) {
-                                        RequestHandler.send(self.buildRequest(response.getHeader('Location'))).done(function (page) {
+                                        var location = response.getHeader('Location') || response.getHeader('location');
+                                        RequestHandler.send(self.buildRequest(location)).done(function (page) {
                                             if (self.currentEvent.node.before_load === false) {
                                                 var children = self.currentEvent.node.children;
 

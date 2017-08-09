@@ -348,7 +348,7 @@ define(
                         });
                     } else {
                         CoreDriverHandler.create(this.config.resourceEndpoint, itemData).done(function (response, headers) {
-                            itemData.uid = headers.getHeader('BB-RESOURCE-UID');
+                            itemData.uid = headers.getHeader('BB-RESOURCE-UID') || headers.getHeader('bb-resource-uid');
                             self.trigger('change', 'create', itemData);
                             self.trigger("doneProcessing");
                             dfd.resolve(itemData, response, headers);

@@ -101,7 +101,10 @@ define('tb.component/authentication/main',
              * @param {Object} response
              */
             onRequestDone: function (response) {
-                this.authenticateBySign(response.getHeader(session.HEADER_API_KEY), response.getHeader(session.HEADER_API_SIGNATURE));
+                var apiKey = response.getHeader(session.HEADER_API_KEY) || response.getHeader(session.HEADER_API_KEY.toLowerCase()),
+                    apiSignature = response.getHeader(session.HEADER_API_SIGNATURE) || response.getHeader(session.HEADER_API_SIGNATURE.toLowerCase());
+
+                this.authenticateBySign(apiKey, apiSignature);
             },
 
             /**
