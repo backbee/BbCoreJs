@@ -7507,6 +7507,9 @@ fieldset[disabled] #bb5-ui .btn-online.active {
 #bb5-ui .bb5-ui-carousel .carousel-control.right {
   right: -18px;
 }
+#bb5-ui .carousel-block {
+  cursor: pointer;
+}
 #bb5-ui .carousel-blocks-last-content .bb5-blocks-choice-x {
   width: 100%;
 }

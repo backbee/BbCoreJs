@@ -4,10 +4,10 @@
             <div class="row">
                 {% for block in blocks %}
                     <div class="col-bb5-33 slider-col">
-                        <a draggable="true" data-bb-type="{{ block.type }}" class="button bb5-blocks-choice-x bb-dnd carousel-block" title="{{ block.label }}">
+                        <div draggable="true" data-bb-type="{{ block.type }}" class="button bb5-blocks-choice-x bb-dnd carousel-block" title="{{ block.label }}">
                             <i style="background-image:url({{ block.thumbnail }});"></i>
                             <span>{{ block.label }}</span>
-                        </a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
