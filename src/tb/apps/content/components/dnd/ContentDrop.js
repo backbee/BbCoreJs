@@ -102,9 +102,16 @@ define(
                     maskTarget = content.jQueryObject.parent().parent(),
                     self = this;
 
-                reader.onload = function (e) {
-                    var data = {
-                            'src': window.btoa(e.target.result),
+                reader.addEventListener('loadend', function () {
+                    var binary = '';
+                    var bytes = new Uint8Array(reader.result);
+                    var length = bytes.byteLength;
+                    for (var i = 0; i < length; i++) {
+                        binary += String.fromCharCode(bytes[i]);
+                    }
+                    
+                     var data = {
+                            'src': window.btoa(binary),
                             'originalname': file.name
                         },
                         config = {
@@ -138,9 +145,9 @@ define(
                             });
                         }
                     });
-                };
+                });
 
-                reader.readAsBinaryString(file);
+                reader.readAsArrayBuffer(file);
             },
 
             onDrop: function (event) {
