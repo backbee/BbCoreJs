@@ -290,8 +290,8 @@ define(
             replaceWith: function (oldContent, newContent) {
                 /* elements */
                 var elementInfos = {},
-                    renderModeParam =  oldContent.getParameters('rendermode'),
-                    renderMode = (renderModeParam !== undefined) ? renderModeParam.value : undefined,
+                    renderModeParam = oldContent.getParameters('rendermode'),
+                    renderMode = (renderModeParam !== undefined) ? renderModeParam.value : oldContent.getRendermode(),
                     oldContentParent = oldContent.getParent(),
                     oldContentHtml = oldContent.jQueryObject,
                     self = this;
