@@ -79,7 +79,9 @@ define(
 
             handleNodeSelection: function (event) {
                 if (!event.node) {
-                    this.view.toolbarMenu.disable();
+                    if (this.view.toolbarMenu) {
+                        this.view.toolbarMenu.disable();
+                    }
                 } else {
                     if (event.node.is_fake === true) {
                         return;
@@ -87,7 +89,9 @@ define(
 
                     this.currentEvent = event;
                     var filters = this.beforeShow(true);
-                    this.view.toolbarMenu.disableButtons(filters);
+                    if (this.view.toolbarMenu) {
+                        this.view.toolbarMenu.disableButtons(filters);
+                    }
                 }
             },
 
@@ -98,7 +102,9 @@ define(
 
                 this.currentEvent = e;
                 var filters = this.beforeShow(true);
-                this.view.toolbarMenu.disableButtons(filters);
+                if (this.view.toolbarMenu) {
+                    this.view.toolbarMenu.disableButtons(filters);
+                }
             },
 
             hasSelection: function () {

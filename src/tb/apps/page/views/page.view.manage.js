@@ -105,7 +105,7 @@ define([
                     wrapper.addClass('bb5-list-data bb5-list-display-list clearfix');
 
                     if (self.dataInit) {
-                        if (items.children.length === 0) {
+                        if (jQuery(items).children.length === 0) {
                             items = Translator.translate('page_no_results_found');
                         }
 
