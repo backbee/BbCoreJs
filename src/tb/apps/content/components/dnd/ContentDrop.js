@@ -103,21 +103,23 @@ define(
                     self = this;
 
                 reader.addEventListener('loadend', function () {
-                    var binary = '';
-                    var bytes = new Uint8Array(reader.result);
-                    var length = bytes.byteLength;
-                    for (var i = 0; i < length; i++) {
-                        binary += String.fromCharCode(bytes[i]);
-                    }
-                    
-                     var data = {
-                            'src': window.btoa(binary),
-                            'originalname': file.name
-                        },
+                    var i, binary = '',
+                        bytes = new Uint8Array(reader.result),
+                        length = bytes.byteLength,
+                        data = {},
                         config = {
                             updateCurrent: true
                         },
                         elements = {};
+
+                    for (i = 0; i < length; i = i + 1) {
+                        binary += String.fromCharCode(bytes[i]);
+                    }
+
+                    data = {
+                        'src': window.btoa(binary),
+                        'originalname': file.name
+                    };
 
                     ResourceRepository.upload(data).done(function (response) {
 

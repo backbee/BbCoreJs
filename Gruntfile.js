@@ -82,7 +82,8 @@ module.exports = function (grunt) {
             files: ['Gruntfile.js', 'src/**/*.js', 'specs/**/*.js', 'nightwatch/**/*.js'],
             options: {
                 jshintrc: '.jshintrc',
-                predef: ['xdescribe']
+                predef: ['xdescribe'],
+                reporterOutput: ""
             }
         },
         jslint: {
@@ -117,7 +118,8 @@ module.exports = function (grunt) {
                         'after',
                         'afterEach',
                         'xit',
-                        'xdescribe'
+                        'xdescribe',
+                        'Uint8Array'
                     ]
                 }
             },
@@ -135,6 +137,7 @@ module.exports = function (grunt) {
                         'Backbone',
                         'JS',
                         'DOMParser',
+                        'Uint8Array',
                         'load' // temp remove it
                     ]
                 }
