@@ -102,15 +102,24 @@ define(
                     maskTarget = content.jQueryObject.parent().parent(),
                     self = this;
 
-                reader.onload = function (e) {
-                    var data = {
-                            'src': window.btoa(e.target.result),
-                            'originalname': file.name
-                        },
+                reader.addEventListener('loadend', function () {
+                    var i, binary = '',
+                        bytes = new Uint8Array(reader.result),
+                        length = bytes.byteLength,
+                        data = {},
                         config = {
                             updateCurrent: true
                         },
                         elements = {};
+
+                    for (i = 0; i < length; i = i + 1) {
+                        binary += String.fromCharCode(bytes[i]);
+                    }
+
+                    data = {
+                        'src': window.btoa(binary),
+                        'originalname': file.name
+                    };
 
                     ResourceRepository.upload(data).done(function (response) {
 
@@ -138,9 +147,9 @@ define(
                             });
                         }
                     });
-                };
+                });
 
-                reader.readAsBinaryString(file);
+                reader.readAsArrayBuffer(file);
             },
 
             onDrop: function (event) {

@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-    - "5.4.0"
+    - "6.11.4"
 before_install:
-    - npm cache clean
+    - npm cache clean --force
     - npm update npm -g
     - npm install -g bower grunt-cli codeclimate-test-reporter nightwatch
 install:
@@ -17,6 +17,5 @@ before_script:
     - mv nightwatch/configuration/globals.json.dist nightwatch/configuration/globals.json
 script:
     - grunt test
-    - grunt nightwatch
 after_script:
     - CODECLIMATE_REPO_TOKEN=6b66bc0cfc18d986b1467f0bedb68fe6f2e4ce7954efa5703ef2d1dfe1b2b2d6 codeclimate < coverage/lcov.info
