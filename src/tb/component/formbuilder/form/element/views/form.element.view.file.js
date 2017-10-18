@@ -214,9 +214,9 @@ define(
 
                             dropzone.removeFile(file);
                             dropzone.options.addedfile.call(dropzone, fileBackup);
-                            dropzone.createThumbnailFromUrl(fileBackup, require('content.manager').defaultPicturePath + '?' + new Date().getTime(), null, "Anonymous");
+                            dropzone.createThumbnailFromUrl(fileBackup, require('content.manager').defaultPicturePath + '?' + new Date().getTime());
                         }
-                    }, "Anonymous");
+                    });
 
                     element.val(value.path);
                 }
