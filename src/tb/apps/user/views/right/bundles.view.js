@@ -104,6 +104,7 @@ define(
                     }
 
                     item.object_class = row.attr('data-class');
+                    item.object_id = item.object_class + '(' + row.data('uid') + ')';
                     item.sid = self.groupId;
 
                     rights.push(item);
