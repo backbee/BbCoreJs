@@ -327,13 +327,11 @@ define(
                 } else {
 
                     if (row.hasClass('all-items')) {
-                    
                         jQuery('input:checkbox[name="all"]').prop('checked', false);
                         jQuery('input:checkbox[name="' + name + '"]:not(:disabled)').prop('checked', target.checked);
                         jQuery('input:checkbox[name="' + name + '"]:not(:disabled)').closest('tr').removeClass('none');
-                    
-                    } else {
 
+                    } else {
                         row.find('input:checkbox[name="all"]').prop('checked', false);
                     }
                 }
