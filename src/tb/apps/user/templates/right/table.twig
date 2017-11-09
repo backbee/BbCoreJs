@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="bb5-manage-rights-items col-bb5-100">
+        {% if objects | length %}
+            <table class="table table-striped table-main">
+                <thead>
+                    <tr>
+                        <td class="col-bb5-14"></td>
+                        {% for right, mask in defaultRights %}
+                            <td align="center" class="col-bb5-10">{{ right | trans }}</td>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody data-class="{{ parent.class }}">
+                    {% if component != 'bundles' and component != 'media' %}
+                    <tr class="all-items" data-mask="{{ parent.rights.total }}">
+                        <td class="category">{{ ('all_' + component) | trans }}</td>
+                        {% for right, mask in defaultRights %}
+                            <td align="center">
+                                <input type="checkbox"
+                                       name="{{ right }}"
+                                       title="{{ right | trans }}"
+                                       value="{{ mask }}" 
+                                       {% if (right == 'all' and sumOfMask == parent.rights.total) or (1 == parent.rights[right]) %} checked="checked" {% endif %}
+                                />
+                            </td>
+                        {% endfor %}
+                    </tr>
+                    {% endif %}
+                    {% for object in objects %}
+                        {{ object }}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="bb5-manage-rights-button col-bb5-100">
+            <div class="pull-right">
+                <button type="button" class="btn btn-default-grey btn-sm btn-clear-all">
+                    {{ 'right_clear_all' | trans }}
+                </button>
+                <button type="button" class="btn btn-default-grey btn-sm btn-save">
+                    {{ 'save' | trans }}
+                </button>
+            </div>
+        </div>
+    {% else %}
+        {% if component == 'workflow' %}
+            {{ 'no_workflow_has_been_added' | trans }}
+        {% endif %}
+    {% endif %}
+</div>

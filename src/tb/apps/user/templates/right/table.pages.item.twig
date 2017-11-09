@@ -1,0 +1,18 @@
+<tr data-uid="{{ item.uid }}" data-mask="{{ item.rights.total }}" data-class="{{ item.class }}" data-url="{{ item.url }}">
+    {% for right, mask in pageRights %}
+        <td align="center" class="col-bb5-10">
+            <input type="checkbox"
+                   name="{{ right }}"
+                   value="{{ mask }}"
+                   title="{{ right | trans }}"
+                   class="item"
+                    {% if (1 == item.rights[right] or 1 == item.rights[right] or ('all' == right and sumOfMask == item.rights.total)) %}
+                        checked="checked"
+                    {% endif %}
+                    {% if ((0 == item.isEditable) or ('none' != right and 1 == item.rights['none'])) %}
+                        disabled="disabled"
+                    {% endif %}
+            />
+        </td>
+    {% endfor %}
+</tr>

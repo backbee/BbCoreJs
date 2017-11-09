@@ -1,0 +1,11 @@
+<tr data-uid="{{ item.uid }}" data-mask="{{ rights.total }}" {% if item.class %} data-class="{{ item.class }}" {% endif %}>
+  <td>{{ item.label }}</td>
+  {% for right, mask in defaultRights %}
+  	<td align="center" class="col-bb5-10">
+  		<input type="checkbox" name="{{ right }}" value="{{ mask }}" title="{{ right | trans }}" class="item" 
+  			{% if (right == 'all' and (sumOfMask == parent.rights.total or sumOfMask == rights.total)) 
+  			   or (1 == rights[right]) 
+  			   or (1 == parent.rights[right]) %} checked="checked" {% endif %}/>
+  	</td>
+  {% endfor %}
+</tr>

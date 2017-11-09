@@ -17,8 +17,14 @@
  * along with BackBuilder5. If not, see <http://www.gnu.org/licenses/>.
  */
 define(
-    ['require', 'jquery', 'user/form/group.form'],
-    function (require, jQuery) {
+    [
+        'require',
+        'Core',
+        'jquery',
+        'user/form/group.form'
+    ],
+    function (require, Core, jQuery) {
+
         'use strict';
 
         /**
@@ -28,30 +34,45 @@ define(
         return Backbone.View.extend({
 
             /**
-             * Initialize of PageViewEdit
+             * Initialize.
+             *
+             * @param data
              */
             initialize: function (data) {
-                var self = this;
 
+                var self = this,
+                    mainPopin = data.popin,
+                    trans = Core.get('trans') || function (value) { return value; },
+                    popinConfig =  {
+                        width: 250,
+                        top: 180,
+                        close: function () {
+                            mainPopin.popinManager.destroy(self.popin);
+                        }
+                    };
+
+                this.popin = mainPopin.popinManager.createPopIn(popinConfig);
                 this.selector = '#toolbar-new-group';
+                this.group = data.group;
+
                 if (data.group.id !== undefined) {
                     this.selector = '#toolbar-group-' + data.group.id;
                 }
-                this.group = data.group;
 
-                require('user/form/group.form').construct(this, data.error).then(
-                    function (tpl) {
-                        self.print(tpl);
-                    }
-                );
-            },
+                if ('edit' === data.action) {
+                    this.popin.setTitle(this.group.name + ' ' + trans('edition').toLowerCase());
+                } else {
+                    this.popin.setTitle(trans('create-new-group'));
+                }
 
-            print: function (tpl) {
-                jQuery(this.selector).html(tpl);
+                require('user/form/group.form').construct(this, data.error).then(function (tpl) {
+                    self.popin.setContent(tpl);
+                });
             },
 
             display: function () {
                 this.dfd = jQuery.Deferred();
+                this.popin.display();
                 return this.dfd.promise();
             },
 

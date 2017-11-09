@@ -27,11 +27,17 @@ define(['component!formbuilder', 'component!translator'], function (formbuilder,
                     type: 'text',
                     label: translator.translate('name'),
                     value: view.group.name
+                },
+                description: {
+                    type: 'textarea',
+                    label: translator.translate('description'),
+                    value: view.group.description
                 }
             },
 
             onSubmit: function (data) {
                 view.group.name = data.name.trim();
+                view.group.description = data.description.trim();
                 view.dfd.resolve(view.group);
             },
 
