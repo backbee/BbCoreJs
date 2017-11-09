@@ -158,9 +158,11 @@ define(
 
             bindGroups: function () {
                 var self = this;
-                jQuery('#toolbar-new-group-action').click(function () {
+
+                jQuery('.bb5-manage-group-create button.button-create-group').click(function () {
                     Core.ApplicationManager.invokeService('user.group.new', self);
                 });
+
                 jQuery('#group-list .btn-action').click(function () {
                     var clicked = jQuery(this),
                         action = clicked.attr('data-action'),

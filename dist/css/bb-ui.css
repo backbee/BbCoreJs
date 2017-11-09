@@ -9,6 +9,7 @@ Version: 2.10 Dec2014
   /**/
   /**/
   /*GROUPS*/
+  /*RIGHTS*/
 }
 #bb5-ui .bb5-query-results {
   color: #e34c26;
@@ -551,6 +552,52 @@ Version: 2.10 Dec2014
 }
 #bb5-ui .bb5-manage-group .bb5-manage-group-header .group-counter {
   color: #e34c26;
+}
+#bb5-ui .bb5-manage-group-create {
+  border: 1px dashed #e34c26;
+  border-radius: 5px;
+  padding: 7px;
+  height: 136px;
+}
+#bb5-ui .bb5-manage-group-create button.button-create-group {
+  padding: 48px;
+  border-radius: 5px;
+  width: 100%;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items input[type="checkbox"] {
+  margin: 10px;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items tr {
+  font-size: 14px;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items td {
+  vertical-align: middle;
+  font-size: 13px;
+  padding-left: 20px;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items thead td {
+  font-weight: bold;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items .block-type {
+  padding: 12px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  border: none;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items .block-type i.fa {
+  padding: 4px;
+  vertical-align: middle;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items .jqtree-element {
+  padding: 8px;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items .current-page td {
+  border: none;
+  padding: 20px 20px 20px 15px;
+}
+#bb5-ui .bb5-manage-rights .bb5-manage-rights-items .current-page td span {
+  color: #be3a18;
+  font-size: 13px;
 }
 #bb5-ui {
   /*RESET UI ELTS - prevent front styles */

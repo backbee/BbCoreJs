@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-bb5-100 content-tree">
+        <div class="row">
+            <div class="col-bb5-20 tree">
+                <div id="content-library-pane-wrapper" class="bb5-windowpane-wrapper windowpane-treeview">
+                    <div class="bb5-windowpane-tree ui-layout-pane ui-layout-west">
+                        <div class="inner-center layout-overflow-scroll">
+                            <div class="bb5-windowpane-tree-inner">
+                                <div class="bb5-windowpane-treewrapper">
+                                    <div class="bb5-windowpane-treewrapper-inner jstree jstree-3 jstree-focused jstree-bb5">
+                                        <div id="bb-page-management-tree-view" class="bb5-treeview"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-bb5-80 bb5-manage-rights-items">
+                <table class="table table-main">
+                    <thead>
+                        <tr class="current-page">
+                            <td colspan="7">{{ 'manage_rights_on' | trans }} <span></span></td>
+                        </tr>
+                        <tr>
+                            {% for right, mask in pageRights %}
+                                <td align="center" class="col-bb5-10">{{ right | trans }}</td>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-bb5-100">
+        <div class="pull-right">
+            <button type="button" class="btn btn-default-grey btn-sm btn-clear-all">{{ 'right_clear_all'|trans }}</button>
+            <button type="button" class="btn btn-default-grey btn-sm btn-save">{{ 'save'|trans }}</button>
+        </div>
+    </div>
+</div>

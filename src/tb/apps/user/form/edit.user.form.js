@@ -38,6 +38,12 @@ define(['component!formbuilder', 'component!translator'], function (formbuilder,
                     label: translator.translate('email'),
                     value: view.user.getObject().email
                 },
+                login: {
+                    type: 'text',
+                    label: translator.translate('login'),
+                    value: view.user.getObject().login,
+                    disabled: true
+                },
                 activated: {
                     type: 'checkbox',
                     options: {

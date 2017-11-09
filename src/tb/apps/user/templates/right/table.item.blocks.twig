@@ -1,0 +1,22 @@
+<tr data-block="{{ item.name }}" class="category">
+    <td colspan="7" class="block-type">
+        {{ item.name | upper }}
+        <i class="fa fa-angle-down"></i>
+    </td>
+</tr>
+{% for content in item.contents %}
+<tr class="blocks" data-mask="{{ content.rights.total }}" data-class="{{ content.type }}" data-parent="{{ item.name }}">
+    <td>{{ content.label | trans }}</td>
+    {% for right, mask in defaultRights %}
+        <td align="center" class="col-bb5-10">
+            <input type="checkbox"
+                   name="{{ right }}"
+                   value="{{ mask }}"
+                   title="{{ right | trans }}"
+                   class="item" 
+                   {% if ((1 == content.rights[right]) or ('none' != right and 1 == parent.rights[right]) 
+                      or ('all' == right and (sumOfMask == (content.rights.total + parent.rights.total)))) %} checked="checked"{% endif %}/>
+        </td>
+    {% endfor %}
+</tr>
+{% endfor %}
