@@ -16,7 +16,8 @@
   background-color: #f2dede;
 }
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -106,7 +107,8 @@
   margin: 0 auto 1em auto;
 }
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   text-align: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -118,30 +120,35 @@
   transition-property: background border;
 }
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   border: 1px solid #CDCDCD;
 }
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   background-color: #e4e4e4;
   border-color: #e4e4e4;
   color: #363636;
   text-transform: uppercase;
 }
 #bb5-site-wrapper .content-actions button:hover,
-#bb5-site-wrapper .content-actions a:hover {
+#bb5-site-wrapper .content-actions a:hover,
+#bb5-site-wrapper .content-actions div.action:hover {
   background-color: #be3a18;
   border-color: #be3a18;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 #bb5-site-wrapper .content-actions button:hover,
-#bb5-site-wrapper .content-actions a:hover {
+#bb5-site-wrapper .content-actions a:hover,
+#bb5-site-wrapper .content-actions div.action:hover {
   color: #fff;
 }
 #bb5-ui .btn-simple,
@@ -253,7 +260,8 @@
 }
 #bb5-ui .btn,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -320,7 +328,8 @@ fieldset[disabled] #bb5-ui .btn {
 #bb5-ui .btn:focus,
 #bb5-ui .btn:active,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -333,7 +342,8 @@ fieldset[disabled] #bb5-ui .btn {
 }
 #bb5-ui .btn-default-grey,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   border: 1px solid #CDCDCD;
   background-color: #e4e4e4;
   border-color: #e4e4e4;
@@ -345,7 +355,8 @@ fieldset[disabled] #bb5-ui .btn {
 #bb5-ui .btn-default-grey.active,
 .open .dropdown-toggle#bb5-ui #bb5-ui .btn-default-grey,
 #bb5-site-wrapper .content-actions button:hover,
-#bb5-site-wrapper .content-actions a:hover {
+#bb5-site-wrapper .content-actions a:hover,
+#bb5-site-wrapper .content-actions div.action:hover {
   background-color: #be3a18;
   border-color: #be3a18;
   -webkit-box-shadow: none;
@@ -360,7 +371,8 @@ fieldset[disabled] #bb5-ui .btn {
 #bb5-ui .btn-default-grey.active .fa,
 .open .dropdown-toggle#bb5-ui #bb5-ui .btn-default-grey .fa,
 #bb5-site-wrapper .content-actions button:hover,
-#bb5-site-wrapper .content-actions a:hover {
+#bb5-site-wrapper .content-actions a:hover,
+#bb5-site-wrapper .content-actions div.action:hover {
   color: #fff;
 }
 #bb5-ui .help-block {

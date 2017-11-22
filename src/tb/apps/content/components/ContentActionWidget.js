@@ -89,10 +89,11 @@ define(['jquery', 'text!content/tpl/content-action', 'jsclass'], function (jQuer
             jQuery.each(actions, function (i) {
                 actionInfos = actions[i];
                 if (!contextualRender) {
-                    button = jQuery("<a></a>").clone();
+                    button = jQuery("<div></div>").clone();
                     button.attr("title", actionInfos.label);
                     button.attr('draggable', 'true');
                     button.addClass(actionInfos.ico);
+                    button.addClass('action');
                 } else {
                     if (actionInfos.hideInContextMenu === true) {
                         return true;
