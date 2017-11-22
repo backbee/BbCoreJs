@@ -49,7 +49,9 @@ define(
                 jQuery('body').append(dragImageWrapper);
                 this.draggedRef = dragImageWrapper;
                 event.dataTransfer.setData('text', 'dragging-dataview-item');
-                event.dataTransfer.setDragImage(dragImageWrapper.get(0), 0, 0);
+                if (typeof event.dataTransfer.setDragImage === 'function') {
+                    event.dataTransfer.setDragImage(dragImageWrapper.get(0), 0, 0);
+                }
                 event.dataTransfer.effectAllowed = 'move';
                 Core.set('dragging-dataview-item', mediaItem);
             }

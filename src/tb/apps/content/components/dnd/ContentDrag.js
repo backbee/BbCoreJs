@@ -75,7 +75,9 @@ define(
                     img = document.createElement('img');
                     img.src = content.definition.image;
 
-                    event.dataTransfer.setDragImage(img, 25, 25);
+                    if (typeof event.dataTransfer.setDragImage === 'function') {
+                        event.dataTransfer.setDragImage(img, 25, 25);
+                    }
                 }
 
                 this.dataTransfer.content = content;

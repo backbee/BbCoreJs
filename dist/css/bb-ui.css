@@ -1867,7 +1867,8 @@ select[multiple]#bb5-ui .input-lg {
 }
 #bb5-ui .btn,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -7094,7 +7095,8 @@ Rich editor
 }
 #bb5-ui .btn,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   text-align: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -7116,7 +7118,8 @@ Rich editor
 #bb5-ui .btn:focus,
 #bb5-ui .btn:active,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -7142,12 +7145,14 @@ Rich editor
 #bb5-ui .btn-default,
 #bb5-ui .btn-default-grey,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   border: 1px solid #CDCDCD;
 }
 #bb5-ui .btn-default-grey,
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   background-color: #e4e4e4;
   border-color: #e4e4e4;
   color: #363636;
@@ -7158,7 +7163,8 @@ Rich editor
 #bb5-ui .btn-default-grey.active,
 .open .dropdown-toggle#bb5-ui #bb5-ui .btn-default-grey,
 #bb5-site-wrapper .content-actions button:hover,
-#bb5-site-wrapper .content-actions a:hover {
+#bb5-site-wrapper .content-actions a:hover,
+#bb5-site-wrapper .content-actions div.action:hover {
   background-color: #be3a18;
   border-color: #be3a18;
   -webkit-box-shadow: none;
@@ -7173,7 +7179,8 @@ Rich editor
 #bb5-ui .btn-default-grey.active .fa,
 .open .dropdown-toggle#bb5-ui #bb5-ui .btn-default-grey .fa,
 #bb5-site-wrapper .content-actions button:hover,
-#bb5-site-wrapper .content-actions a:hover {
+#bb5-site-wrapper .content-actions a:hover,
+#bb5-site-wrapper .content-actions div.action:hover {
   color: #fff;
 }
 #bb5-ui .btn-transparent,
@@ -11563,7 +11570,8 @@ fieldset[disabled] #bb5-ui .btn-online.active {
   z-index: 489999;
 }
 #bb5-site-wrapper .content-actions button,
-#bb5-site-wrapper .content-actions a {
+#bb5-site-wrapper .content-actions a,
+#bb5-site-wrapper .content-actions div.action {
   color: #363636;
   width: 30px;
   height: 30px;
@@ -11654,7 +11662,7 @@ fieldset[disabled] #bb5-ui .btn-online.active {
   position: "absolute";
   width: "150px";
 }
-#bb5-ui .content-actions a {
+#bb5-ui .content-actions div.action {
   cursor: pointer;
 }
 .bb-contentsplitter-marker {
