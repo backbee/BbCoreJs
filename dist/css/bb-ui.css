@@ -11531,7 +11531,8 @@ fieldset[disabled] #bb5-ui .btn-online.active {
   -webkit-box-shadow: 0px 0px 1px 3px rgba(227, 76, 38, 0.8);
   box-shadow: 0px 0px 1px 3px rgba(227, 76, 38, 0.8);
 }
-#bb5-site-wrapper {
+#bb5-site-wrapper,
+#bb5-site-wrapper .nav-outermost-wrapper {
   margin-top: 150px;
 }
 #bb5-site-wrapper .content-actions {
