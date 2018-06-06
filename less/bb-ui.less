@@ -2653,7 +2653,7 @@ Version: 2.10 Dec2014
                 }
                 // FIRST
                 >li:first-child {
-                    >div { 
+                    >div {
                         padding:6px;
                         //
                         >.jqtree-title {
@@ -2843,7 +2843,9 @@ Version: 2.10 Dec2014
 
 #bb5-site-wrapper {
 
-    margin-top: @bb-toolbar-h;
+    &, & .nav-outermost-wrapper {
+        margin-top: @bb-toolbar-h;
+    }
 
     .content-actions {
         position: absolute;
